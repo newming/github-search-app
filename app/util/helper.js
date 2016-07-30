@@ -1,8 +1,8 @@
-import axios from 'axios'
+import axios from 'axios';
 
 function getRepos(username){
   // 这里使用了 ES6 的字符串模板
-  return axios.get(`https://api.github.com/users/${username}/repos`);
+  return axios.get(`https://api.github.com/users/${username}/repos?per_page=5`);
 }
 
 

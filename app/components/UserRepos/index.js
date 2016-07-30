@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 
 export default class UserRepos extends Component {
   render(){
-    let styles={
-      list:{
-        maxHeight:'500px',
-        overflowY:'scroll'
-      }
-    }
-
     // console.log('repos:', this.props.repos);
     let repos = this.props.repos.map( (repo, index ) => {
       return (
@@ -21,7 +14,7 @@ export default class UserRepos extends Component {
 
     return <div>
       <h3> 用户的 Git 仓库 </h3>
-      <ul className="list-group" style={styles.list}>
+      <ul className="list-group">
         {repos}
       </ul>
     </div>

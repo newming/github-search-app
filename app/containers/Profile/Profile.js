@@ -6,6 +6,7 @@ import { UserProfile, UserRepos, Notes } from '../../components';
 class Profile extends Component {
   // 这么写总感觉会报错啊。。。额，并不会
   state = {
+    wait:true,
     repos: ['A'],
     bio: {
       name: 'please wait'
@@ -18,6 +19,7 @@ class Profile extends Component {
       // console.log( data );
       // 更新state数据
       this.setState({
+        wait:false,
         bio: data.bio,
         repos: data.repos
       })
@@ -29,6 +31,9 @@ class Profile extends Component {
   render(){
     // 下面的 params 可以通过 console.log 输出查看
     // console.log(this.props);
+    if (this.state.wait) {
+      return <h1>请稍等</h1>
+    }
     return (
       <div className="row">
         <div className="col-sm-4">
